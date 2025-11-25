@@ -5,25 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sobre Mim - English with PaulX</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  border: 2px solid var(--accent);
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.about-section .desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #c7cbe0;
+}
+
+.about-section strong {
+  color: var(--accent);
+}
+
+.cta-wrap {
+  margin-top: 30px;
+}
+
+.btn-red {
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.btn-red:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(230,57,70,0.35);
+}
+
+  </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container about-page">
+    
+    <!-- Logo -->
     <div class="logo-top">
-      <img src="paul.png" alt="English with PaulX">
+      <img src="paul.png" alt="English with PaulX" class="profile-img">
     </div>
 
-    <h1>Sobre Mim</h1>
+    <!-- Título -->
+    <h1 class="page-title">Sobre Mim</h1>
 
-    <p class="desc">
-      Olá! Meu nome é Paul e sou professor de inglês nativo da Alemanha. Ensino inglês online e presencial, para alunos de todos os níveis.  
-      Minha metodologia é prática, dinâmica e totalmente focada em comunicação real.
-    </p>
+    <!-- Seção de apresentação -->
+    <section class="about-section">
+      <p class="desc">
+        Olá! Meu nome é <strong>Paul</strong> e sou professor de inglês nativo da Alemanha. 
+        Ensino <strong>inglês online e presencial</strong>, para alunos de todos os níveis.
+      </p>
 
-    <p class="desc">
-      Meu objetivo é fazer com que você aprenda inglês de forma rápida e natural, com confiança e sem medo de errar.
-    </p>
+      <p class="desc">
+        Minha metodologia é <strong>prática, dinâmica</strong> e totalmente focada em 
+        <strong>comunicação real</strong>, para que você aprenda inglês de forma rápida e natural.
+      </p>
 
-    <a href="index.html" class="btn-red">Voltar para Home</a>
+      <p class="desc">
+        Meu objetivo é que você ganhe <strong>confiança</strong> e <strong>fluência</strong>, 
+        sem medo de errar, aproveitando cada aula ao máximo.
+      </p>
+    </section>
+
+    <!-- Botão de voltar -->
+    <div class="cta-wrap">
+      <a href="index.html" class="btn btn-red">⬅️ Voltar para Home</a>
+    </div>
+
   </div>
 </body>
 </html>
