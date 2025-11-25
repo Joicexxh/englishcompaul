@@ -1,17 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sobre Mim - English with PaulX</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .about-page {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
+:root {
+  --accent: #e63946;
+  --dark: #0a0f24;
+  --dark2: #11182e;
+  --text-light: #f4f5fa;
+  --muted: #b4b9c9;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--dark);
   color: var(--text-light);
+}
+
+.container.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .profile-img {
@@ -19,23 +31,37 @@
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  border: 2px solid var(--accent);
+  border: 3px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 .page-title {
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 25px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
   color: white;
+  letter-spacing: 1px;
 }
 
-.about-section .desc {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 20px;
+.about-section.card {
+  background: var(--dark2);
+  border-radius: 20px;
+  padding: 30px 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  text-align: left;
   color: #c7cbe0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.about-section.card p {
+  margin-bottom: 18px;
 }
 
 .about-section strong {
@@ -43,61 +69,23 @@
 }
 
 .cta-wrap {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .btn-red {
+  display: inline-block;
   background: var(--accent);
   color: white;
   font-weight: 700;
-  padding: 14px 28px;
-  border-radius: 12px;
+  padding: 16px 32px;
+  border-radius: 14px;
   text-decoration: none;
-  display: inline-block;
-  transition: 0.2s;
-}
-
-.btn-red:hover {
-  transform: scale(1.05);
+  font-size: 1.1rem;
+  transition: all 0.25s ease;
   box-shadow: 0 8px 25px rgba(230,57,70,0.35);
 }
 
-  </style>
-</head>
-<body>
-  <div class="container about-page">
-    
-    <!-- Logo -->
-    <div class="logo-top">
-      <img src="paul.png" alt="English with PaulX" class="profile-img">
-    </div>
-
-    <!-- Título -->
-    <h1 class="page-title">Sobre Mim</h1>
-
-    <!-- Seção de apresentação -->
-    <section class="about-section">
-      <p class="desc">
-        Olá! Meu nome é <strong>Paul</strong> e sou professor de inglês nativo da Alemanha. 
-        Ensino <strong>inglês online e presencial</strong>, para alunos de todos os níveis.
-      </p>
-
-      <p class="desc">
-        Minha metodologia é <strong>prática, dinâmica</strong> e totalmente focada em 
-        <strong>comunicação real</strong>, para que você aprenda inglês de forma rápida e natural.
-      </p>
-
-      <p class="desc">
-        Meu objetivo é que você ganhe <strong>confiança</strong> e <strong>fluência</strong>, 
-        sem medo de errar, aproveitando cada aula ao máximo.
-      </p>
-    </section>
-
-    <!-- Botão de voltar -->
-    <div class="cta-wrap">
-      <a href="index.html" class="btn btn-red"> Voltar para Home</a>
-    </div>
-
-  </div>
-</body>
-</html>
+.btn-red:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(230,57,70,0.45);
+}
