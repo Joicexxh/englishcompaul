@@ -221,14 +221,43 @@ footer {
   transform:translateY(-2px);
   opacity:0.9;
 }
+.plan {
+    text-align: left;
+}
 
+.savings {
+  background: rgba(230, 57, 70, 0.12);
+  border-left: 4px solid var(--accent);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-top: 12px;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.15);
+}
+@media(max-width:500px){
+  .plan > div[style*="display:flex"] {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, .wrap {
+  flex: 1;
+}
 
 
   </style>
 </head>
 
 <body>
-<div class="wrap">
 
   <!-- HEADER -->
   <header>
@@ -253,10 +282,10 @@ footer {
       <div class="kicker">PROMOÇÃO PARA NOVOS ALUNOS</div>
 
       <h2 class="promo-title">
-        Aulas a partir de <span style="color:var(--accent)">R$ 34,99 / h</span>
+        Aulas a partir de <span style="color:var(--accent)">R$ 29,99/h</span>
       </h2>
 
-      <p class="promo-sub">First Meeting GRATUITO (30 min). Apenas 8 vagas por mês.</p>
+      <p class="promo-sub">First Meeting GRATUITO (45 min). Apenas 8 vagas por mês.</p>
 
       <a class="btn-primary"
          href="https://wa.me/4915227712596?text=Olá! Quero agendar o First Meeting (grátis)."
@@ -265,7 +294,7 @@ footer {
       </a>
 
       <a class="btn-ghost"
-         href="https://wa.me/4915227712596?text=Olá! Quero uma aula avulsa por R$ 84,99/h."
+         href="https://wa.me/4915227712596?text=Olá! Quero uma aula avulsa por R$ 85,00/h."
          target="_blank">
         Comprar Single Class
       </a>
@@ -277,7 +306,7 @@ footer {
 
     <div style="max-width:220px;text-align:center">
       <div style="font-size:0.9rem;color:var(--muted);">Exemplo</div>
-      <div style="font-size:2.3rem;font-weight:900;color:var(--accent)">R$ 84,99</div>
+      <div style="font-size:2.3rem;font-weight:900;color:var(--accent)">R$ 85,00</div>
       <div style="color:var(--muted)">por hora — Single class</div>
     </div>
   </section>
@@ -289,11 +318,11 @@ footer {
     <div class="plan">
       <div class="tag">GRÁTIS</div>
       <div class="plan-title">First Meeting</div>
-      <div class="plan-desc">Sessão de 30 min para diagnóstico e plano personalizado.</div>
+      <div class="plan-desc">Sessão de 45 min para diagnóstico e plano personalizado.</div>
 
       <div style="display:flex;align-items:center;gap:10px;">
         <div class="plan-price">GRÁTIS</div>
-        <div class="plan-hour">30 min</div>
+        <div class="plan-hour">45 min</div>
       </div>
 
       <div class="plan-cta">
@@ -302,7 +331,7 @@ footer {
            target="_blank">
           Agendar (grátis)
         </a>
-        <button class="btn-ghost" onclick="copyText('Quero agendar o First Meeting (grátis)')">
+
       </div>
     </div>
 
@@ -313,18 +342,72 @@ footer {
 
       <div style="display:flex;align-items:center;gap:8px;">
         <div class="strike">R$ 120/h</div>
-        <div class="plan-price">R$ 84,99</div>
+        <div class="plan-price">R$ 85,00</div>
       </div>
+      <div class="savings">Economize R$ 35,00 </div>
+
       <div class="plan-hour">Aula avulsa • Cobrado por hora</div>
 
       <div class="plan-cta">
         <a class="btn-primary"
-           href="https://wa.me/4915227712596?text=Olá! Quero comprar uma Single Class por R$ 84,99/h."
+           href="https://wa.me/4915227712596?text=Olá! Quero comprar uma Single Class por R$ 85,00/h."
            target="_blank">
           Comprar via WhatsApp
         </a>
       </div>
     </div>
+
+    <div class="plan">
+  <div class="tag">INDIVIDUAL</div>
+  <div class="plan-title">Individual Pack — 10 aulas</div>
+  <div class="plan-desc">Pacote com 10 aulas individuais, totalmente personalizadas.</div>
+
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div class="strike">R$ 85,00</div>
+    <div class="plan-price">R$ 80,00</div>
+    <div class="plan-hour">por aula • Total: R$ 800</div>
+  </div>
+  <div class="savings">Economize R$ 50,00 </div>
+
+
+  <div class="plan-cta">
+    <a class="btn-primary"
+       href="https://wa.me/4915227712596?text=Olá! Quero o pacote de 10 aulas individuais por R$ 80,00 cada."
+       target="_blank">
+      Comprar Pacote
+    </a>
+  </div>
+</div>
+<div style="text-align:center;">
+
+ <!-- Intense Course -->
+<div class="plan">
+
+  <div class="tag">PACK INDIVIDUAL</div>
+
+  <div class="plan-title">Intense Individual Classes – 20 aulas</div>
+  <div class="plan-desc">Pacote para quem quer evoluir rápido com acompanhamento individual contínuo.</div>
+
+    <div style="display:flex;align-items:center;gap:10px;">
+         <div class="strike">R$ 85,00</div>
+    <div class="plan-price">R$ 75,00</div>
+    <div class="plan-hour">por aula • Total: R$ 1500</div>
+  </div>
+<div class="savings">Economize R$ 200</div>
+
+
+  <div class="plan-cta">
+ <a class="btn-primary"
+       href="https://wa.me/4915227712596?text=Olá! Quero o Intense Individual Course (20 aulas)."
+       target="_blank">
+      Quero o Intensivo
+    </a>
+  </div>
+
+</div>
+
+
+
 
     <!-- Group Classes -->
     <div class="plan">
@@ -333,8 +416,11 @@ footer {
       <div class="plan-desc">Aulas em grupo com foco em conversação guiada.</div>
 
       <div>
+         <div class="strike">R$ 65,00</div>
         <div class="plan-price">R$ 34,99</div>
       </div>
+      <div class="savings">Economize R$ 30</div>
+
       <div class="plan-hour">Por hora • Vagas limitadas</div>
 
       <div class="plan-cta">
@@ -346,30 +432,51 @@ footer {
       </div>
     </div>
 
-    <!-- Intense Course -->
-    <div class="plan">
-      <div class="plan-title">Intense Single Course</div>
-      <div class="plan-desc">Curso intensivo de 10 semanas com acompanhamento individual.</div>
+   <div class="plan">
+  <div class="tag">PACOTE</div>
+  <div class="plan-title">Group Pack — 10 aulas</div>
+  <div class="plan-desc">Pacote com 10 aulas em grupo. Ideal para quem quer constância e economia.</div>
 
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div class="strike">R$ 2.000</div>
-        <div class="plan-price">R$ 1.500</div>
-      </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div class="strike">R$ 34,99</div>
+    <div class="plan-price">R$ 32,99</div>
+    <div class="plan-hour">por aula • Total: R$ 329,90</div>
+     <div class="savings">Economize R$ 20,00</div>
+  </div>
 
-      <div class="plan-hour">Pacote completo (10 semanas)</div>
+  <div class="plan-cta">
+    <a class="btn-primary"
+       href="https://wa.me/4915227712596?text=Olá! Quero o pacote de 10 aulas em grupo por R$ 32,99 cada."
+       target="_blank">
+      Comprar Pacote
+    </a>
+  </div>
+</div>
+<div class="plan">
+  <div class="tag">MELHOR PREÇO</div>
+  <div class="plan-title">Group Pack — 20 aulas</div>
+  <div class="plan-desc">Pacote para quem quer acelerar o aprendizado com o melhor valor por aula.</div>
 
-      <div class="plan-cta">
-        <a class="btn-primary"
-           href="https://wa.me/4915227712596?text=Olá! Quero o Intense Single Course (10 semanas)."
-           target="_blank">
-          Quero o Intensivo
-        </a>
-      </div>
-    </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div class="strike">R$ 34,99</div>
+    <div class="plan-price">R$ 29,99</div>
+
+    <div class="plan-hour">por aula • Total: R$ 599,80</div>
+     <div class="savings">Economize R$ 100,00</div>
+  </div>
+
+
+  <div class="plan-cta">
+    <a class="btn-primary"
+       href="https://wa.me/4915227712596?text=Olá! Quero o pacote de 20 aulas em grupo por R$ 29,99 cada."
+       target="_blank">
+      Comprar Pacote
+    </a>
+  </div>
+</div>
 <div style="text-align:center;">
   <a href="index.html" class="btn-back-home"> Voltar para a Home</a>
 </div>
-
 
 <footer>
   <div class="footer-text">
