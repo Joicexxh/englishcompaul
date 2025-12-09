@@ -1,27 +1,26 @@
-** {
+/* ================= RESET ================= */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 
+/* ================= BODY ================= */
 body {
   background: linear-gradient(to bottom, #0c1e3e, #051b3c);
   color: #fff;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   padding: 2rem;
   position: relative;
 }
 
 /* ================= Personagem lateral ================= */
 .side-character {
-  position: absolute;
-  left: -50px;
-   bottom: 50px;
-    z-index: 10;
+  position: fixed; /* fixa lateralmente */
+  left: 20px;
+  bottom: 20px;
+  z-index: 10;
 }
 
 .character-large {
@@ -37,6 +36,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
+  margin: 0 auto; /* centraliza horizontalmente */
   position: relative;
   z-index: 2;
 }
@@ -45,6 +45,25 @@ body {
 .logo-top img {
   max-width: 200px;
   margin-bottom: 2rem;
+}
+
+.logo {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: white;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.logo .x {
+  color: red;
+  font-weight: 900;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
+  font-size: 1.5rem;
 }
 
 /* ================= Títulos ================= */
@@ -115,42 +134,17 @@ h1 {
   fill: #4caf50;
 }
 
-/* ================= Responsividade ================= */
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  .side-character {
-    display: none;
-  }
-}
-.logo .x {
-  color: red;
-  font-weight: 900;
-  margin-left: 5px;
-  position: relative;
-  top: -2px;
-  font-size: 1.5rem;
-}
-/* Logo */
-.logo {
-  text-align: center;
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 2px;
-  color: white;
-  margin-bottom: 2rem;
-  position: relative;
-/* ================= FOOTER ================= */
+/* ================= Footer ================= */
 footer {
   margin-top: 60px;
   padding: 30px 0;
   text-align: center;
   color: #b4b9c9;
   border-top: 1px solid #1e2744;
-  background: rgba(17, 24, 46, 0.9);
+  background: rgba(17, 24, 46, 0.95);
   width: 100%;
-  clear: both;        /* evita que fique ao lado de elementos flutuantes */
-  position: relative; /* garante que não fique sobreposto */
-  z-index: 1;
+  position: relative;
+  clear: both;
 }
 
 .footer-text {
@@ -172,4 +166,12 @@ footer {
 .footer-instagram:hover {
   transform: translateY(-2px);
   opacity: 0.9;
+}
+
+/* ================= Responsividade ================= */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .side-character {
+    display: none;
+  }
 }
