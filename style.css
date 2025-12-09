@@ -19,7 +19,7 @@ body {
 .side-character {
   position: fixed; /* fixa lateralmente */
   left: 20px;
-  bottom: 20px;
+  bottom: 10px;
   z-index: 10;
 }
 
