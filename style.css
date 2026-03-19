@@ -8,40 +8,11 @@
 
 /* ================= BODY ================= */
 body {
-  background: linear-gradient(135deg, #0c1e3e, #1a2f4e, #051b3c);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  background: linear-gradient(to bottom, #0c1e3e, #051b3c);
   color: #fff;
   min-height: 100vh;
   padding: 2rem;
   position: relative;
-  overflow-x: hidden;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Efeito de estrelas */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(255,59,59,0.1) 0%, transparent 50%);
-  animation: pulseStars 8s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes pulseStars {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
 }
 
 /* ================= Personagem lateral ================= */
@@ -49,70 +20,38 @@ body::before {
   position: fixed;
   left: 20px;
   bottom: 1px;
-  z-index: 20;
-  filter: drop-shadow(0 10px 20px rgba(255,59,59,0.3));
-  animation: float 4s ease-in-out infinite;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.side-character:hover {
-  filter: drop-shadow(0 15px 30px rgba(255,59,59,0.6));
-  transform: scale(1.02) translateY(-5px);
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(1deg); }
+  z-index: 10;
 }
 
 .character-large {
   width: 450px;
   max-width: 90%;
-  border-radius: 30px 30px 30px 30px;
-  transition: all 0.3s;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  transition: transform 0.3s ease;
+}
+
+.character-large:hover {
+  transform: scale(1.02);
 }
 
 /* ================= Container ================= */
 .container {
   max-width: 900px;
-  background: rgba(10, 25, 50, 0.9);
-  backdrop-filter: blur(10px);
-  padding: 2.5rem 3rem;
-  border-radius: 30px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,59,59,0.2) inset;
+  background: rgba(10, 25, 50, 0.95);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
   margin: 0 auto;
   position: relative;
-  z-index: 10;
-  animation: slideUp 0.8s ease-out;
-  border: 1px solid rgba(255,59,59,0.2);
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
+  z-index: 2;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 /* ================= Logo ================= */
-.logo-top {
-  animation: fadeInScale 0.8s ease-out;
-}
-
 .logo-top img {
   max-width: 200px;
   margin-bottom: 2rem;
-  filter: drop-shadow(0 5px 15px rgba(255,59,59,0.3));
-  transition: transform 0.3s;
-}
-
-.logo-top img:hover {
-  transform: rotate(5deg) scale(1.05);
-}
-
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
 }
 
 .logo {
@@ -125,23 +64,20 @@ body::before {
   position: relative;
 }
 
-/* X SOBREPOSTO ANIMADO */
-.logo .x {
-  color: #ff3b3b;
-  font-weight: 900;
-  margin-left: 5px;
+/* X SOBREPOSTO NO O - CORRIGIDO */
+.logo-x-container {
   position: relative;
-  top: -2px;
-  font-size: 1.5rem;
   display: inline-block;
-  animation: sparkle 2s infinite, rotate 3s infinite;
-  cursor: pointer;
-  text-shadow: 0 0 10px rgba(255,59,59,0.5);
 }
 
-@keyframes sparkle {
-  0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
-  50% { opacity: 0.8; transform: scale(1.2) rotate(5deg); }
+.logo-x {
+  color: #ff3b3b;
+  font-weight: 900;
+  font-size: 1.8rem;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  text-shadow: 0 0 10px rgba(255,59,59,0.5);
 }
 
 /* ================= Títulos ================= */
@@ -150,102 +86,55 @@ h1 {
   font-weight: 900;
   line-height: 1.3;
   margin-bottom: 1rem;
-  animation: fadeInLeft 0.8s ease-out 0.2s both;
-}
-
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
 }
 
 .highlight {
   color: #ff3b3b;
   text-transform: uppercase;
-  background: linear-gradient(45deg, #ff3b3b, #ff6b6b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  animation: gradient 3s ease infinite;
-  background-size: 200% 200%;
-}
-
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  display: block;
+  font-size: 2.8rem;
+  margin-top: 5px;
 }
 
 /* ================= Descrição ================= */
 .desc {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #ddd;
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
-  animation: fadeInRight 0.8s ease-out 0.3s both;
-}
-
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
+  line-height: 1.5;
 }
 
 /* ================= Botões ================= */
 .btn-red {
   display: inline-block;
-  background: linear-gradient(135deg, #ff3b3b, #ff0000);
+  background: #ff3b3b;
   color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 10px 20px rgba(255, 59, 59, 0.4), 0 3px 0 #990000;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(255, 59, 59, 0.3);
+  transition: all 0.3s ease;
   margin: 0.5rem;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.2);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn-red::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
+  border: 1px solid transparent;
 }
 
 .btn-red:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 25px rgba(255, 59, 59, 0.6), 0 5px 0 #990000;
-}
-
-.btn-red:hover::before {
-  left: 100%;
-}
-
-.btn-red:active {
-  transform: translateY(2px);
-  box-shadow: 0 5px 10px rgba(255, 59, 59, 0.4), 0 2px 0 #990000;
+  background: #ff5757;
+  box-shadow: 0 8px 20px rgba(255, 59, 59, 0.5);
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.2);
 }
 
 /* ================= Benefícios ================= */
 .benefits {
   list-style: none;
-  margin: 2.5rem 0;
+  margin: 2rem 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
 }
 
 .benefits li {
@@ -254,81 +143,46 @@ h1 {
   font-size: 1.1rem;
   font-weight: 600;
   color: #d7f0d6;
-  margin-bottom: 0;
-  gap: 12px;
-  padding: 0.8rem 1.5rem;
+  margin-bottom: 1rem;
+  gap: 10px;
+  padding: 0.5rem 1rem;
   background: rgba(255,255,255,0.05);
-  border-radius: 50px;
-  border: 1px solid rgba(255,59,59,0.2);
-  transition: all 0.3s;
-  animation: fadeInUp 0.6s ease-out both;
-  cursor: pointer;
-}
-
-.benefits li:nth-child(1) { animation-delay: 0.4s; }
-.benefits li:nth-child(2) { animation-delay: 0.5s; }
-.benefits li:nth-child(3) { animation-delay: 0.6s; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  border-radius: 10px;
+  transition: background 0.3s;
 }
 
 .benefits li:hover {
-  transform: translateY(-5px);
   background: rgba(255,59,59,0.1);
-  border-color: #ff3b3b;
-  box-shadow: 0 10px 20px rgba(255,59,59,0.2);
 }
 
 .benefits li svg {
   width: 22px;
   height: 22px;
-  fill: #ff3b3b;
-  transition: all 0.3s;
-}
-
-.benefits li:hover svg {
-  transform: rotate(360deg) scale(1.2);
-  fill: #ff6b6b;
+  fill: #4caf50;
 }
 
 /* ================= Depoimentos ================= */
 .testimonials {
-  margin: 3rem 0;
+  margin: 2rem 0;
   padding: 2rem;
   background: rgba(0,0,0,0.2);
-  border-radius: 20px;
-  border: 1px solid rgba(255,59,59,0.2);
+  border-radius: 15px;
+  border-left: 4px solid #ff3b3b;
 }
 
 .testimonials strong {
   color: #ff3b3b;
   font-size: 1.2rem;
   display: block;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-bottom: 1rem;
 }
 
 .testimonial-item {
-  padding: 1rem;
-  border-left: 3px solid #ff3b3b;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
   background: rgba(255,255,255,0.03);
-  margin: 1rem 0;
-  border-radius: 0 10px 10px 0;
-  animation: slideInRight 0.5s ease-out;
-  transition: all 0.3s;
-}
-
-.testimonial-item:hover {
-  transform: translateX(5px);
-  background: rgba(255,59,59,0.1);
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
+  border-radius: 8px;
+  color: #ddd;
 }
 
 /* ================= Footer ================= */
@@ -337,44 +191,40 @@ footer {
   padding: 30px 0;
   text-align: center;
   color: #b4b9c9;
-  border-top: 2px solid rgba(255,59,59,0.3);
+  border-top: 1px solid #1e2744;
   background: rgba(17, 24, 46, 0.95);
-  backdrop-filter: blur(5px);
   width: 100%;
   position: relative;
   clear: both;
-  border-radius: 30px 30px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 
 .footer-text {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  color: #ddd;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
 }
 
 .footer-text strong {
   color: #ff3b3b;
-  font-size: 1.1rem;
 }
 
 .footer-instagram {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #fff;
+  color: #e63946;
   font-weight: 700;
   text-decoration: none;
   font-size: 1rem;
-  transition: 0.3s;
-  background: linear-gradient(135deg, #833ab4, #fd1d1d, #f77737);
-  padding: 10px 25px;
+  transition: 0.25s;
+  padding: 0.5rem 1.5rem;
+  background: rgba(255,255,255,0.05);
   border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(131,58,180,0.3);
 }
 
 .footer-instagram:hover {
-  transform: translateY(-3px) rotate(2deg);
-  box-shadow: 0 10px 25px rgba(131,58,180,0.5);
+  transform: translateY(-2px);
+  background: rgba(255,59,59,0.1);
 }
 
 /* ================= Responsividade ================= */
@@ -385,88 +235,61 @@ footer {
 }
 
 @media (max-width: 768px) {
-  body { padding: 1rem; }
+  body {
+    padding: 1rem;
+  }
   
-  h1 { font-size: 2rem; }
+  h1 {
+    font-size: 2rem;
+  }
   
-  .container { padding: 1.5rem; }
+  .highlight {
+    font-size: 2.2rem;
+  }
   
-  .btn-red { 
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .btn-red {
     display: block;
-    width: 90%;
-    margin: 0.5rem auto;
-  }
-  
-  .benefits {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .benefits li {
     width: 100%;
-    justify-content: center;
+    margin: 0.5rem 0;
   }
   
   .side-character {
     position: static;
-    display: block !important; /* Força aparecer no celular */
-    max-width: 200px;
-    margin: 0 auto 20px;
-    animation: float 4s ease-in-out infinite;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
   }
   
   .character-large {
     width: 200px;
+    margin: 0 auto;
+  }
+  
+  .logo-x {
+    font-size: 1.5rem;
+    top: -10px;
+    right: -10px;
   }
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 1.6rem; }
-  
-  .logo .x {
-    font-size: 1.3rem;
-    animation: sparkle 2s infinite;
+  h1 {
+    font-size: 1.6rem;
   }
   
-  .btn-red {
-    padding: 0.8rem 1.5rem;
+  .highlight {
+    font-size: 1.8rem;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .benefits li {
     font-size: 1rem;
   }
-}
-
-/* ================= Botão WhatsApp Flutuante ================= */
-.whatsapp-float {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: linear-gradient(135deg, #25d366, #128C7E);
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s;
-  z-index: 100;
-  animation: pulse-whatsapp 2s infinite;
-}
-
-@keyframes pulse-whatsapp {
-  0% { transform: scale(1); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); }
-  50% { transform: scale(1.1); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6); }
-  100% { transform: scale(1); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); }
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.15) rotate(5deg);
-}
-
-/* ================= Loader Animation ================= */
-@keyframes loader {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
